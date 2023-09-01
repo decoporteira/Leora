@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,10 @@ public class FlipEnemy : MonoBehaviour
     { 
         if(obj.tag == "Enemy")
         {
-            obj.transform.Rotate(0f, 180f, 0f);
+           
+
+         obj.transform.Rotate(0f, 180f, 0f);
+            
         }
     }
 }
