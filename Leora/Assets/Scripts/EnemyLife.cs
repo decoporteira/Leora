@@ -5,17 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Head : MonoBehaviour
 {
-    [SerializeField] public ParticleSystem psEnemy;
+    //[SerializeField] public ParticleSystem psEnemy;
     void OnTriggerEnter2D(Collider2D obj)
+  
     {
-        if (obj.gameObject.tag == "feet")
-          
+        if (obj.GetComponent<PlayerFeet>())
+         
         {
             Debug.Log("Matou inimigo");
-            psEnemy.Play();
+           // psEnemy.Play();
             Destroy(transform.parent.gameObject);
-            SceneManager.LoadScene(0);
-            Debug.Log("restart level");
+          
+
         }
     }
+   
 }

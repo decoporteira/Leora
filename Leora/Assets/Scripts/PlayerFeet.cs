@@ -10,9 +10,9 @@ public class PlayerFeet : MonoBehaviour
   
         void OnTriggerEnter2D(Collider2D obj)
         {
-            if (obj.gameObject.CompareTag("head"))
+            if (obj.GetComponent<Head>())
             {
-            Debug.Log("pisou na cabeça do inimigo");
+           Debug.Log("pisou na cabeça do inimigo");
             PlayerRb.velocity = new Vector2(PlayerRb.velocity.x, 0);
             PlayerRb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
 

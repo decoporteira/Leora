@@ -19,26 +19,20 @@ public class PlayerLife : MonoBehaviour
             //change rigidbody to kinematic
             gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             //change color to red
+            Debug.Log("Matou player");
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             Invoke("DestroyObj", 1.0f);
 
         }
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "die")
-        {
-            Invoke("DestroyObj", 1.0f);
-        }
-    }
-
+   
     private void DestroyObj()
     {
         Destroy(gameObject);
         //restart level
         SceneManager.LoadScene(0);
-        Debug.Log("restart level");
+        
     }
 
 }
